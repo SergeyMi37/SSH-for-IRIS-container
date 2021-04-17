@@ -40,7 +40,7 @@ e37392a1c7c3   ssh-for-iris-container   "/bin/sh -c '/iris-m…"   2 hours ago  
 2188/tcp, 54773/tcp,    
 0.0.0.0:41022->22/tcp, 0.0.0.0:41773->1972/tcp, 0.0.0.0:42773->52773/tcp, 0.0.0.0:49716->53773/tcp   
 ```
-and see the assigned_port for port 22 in container (here it's 41022).  
+And see the assigned_port for port 22 in container **0.0.0.0:41022->22/tcp,**(here it's 41022).   
 Next, you connect with PuTTY over SSH to server:assigned_port   
 Log in as **irisowner** + the PW of your choice and you are in your container.   
 
@@ -77,13 +77,13 @@ $ iris session iris -U "%SYS"
 Node: e37392a1c7c3, Instance: IRIS
 %SYS>zpm
 zpm:%SYS>list
-language-extender 0.0.1
+ssh-for-iris-container 0.0.1
 webterminal 4.9.2
 zpm 0.2.14
-zpm:%SYS>q
-
+zpm:%SYS>q %SYS>d ^zSSH This is a placeholder for testing
+ if you see it, then the installation was OK   
 %SYS>h
 $
 ```
 
-[Article in DC](https://community.intersystems.com/post/simplified-objectscript-source-folder-structure-package-manager)
+[Article in DC](https://community.intersystems.com/post/ssh-iris-container)
