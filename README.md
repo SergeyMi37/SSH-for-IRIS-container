@@ -13,7 +13,7 @@ There a few siginifcant extensions:
 - docker-compose.yaml exposes port 22 for SSH   
 - Dockerfile installs SSH server and prepares Server start. You may observe    
   a significant bunch up updates as the underlying Ubuntu is not very fresh    
-- to login into your container user **irisrsowner** got a password visible to you   
+- to login into your container user **irisowner** got a password visible to you   
   that is required for login over SSH. User root is not allowed for login.   
  
 The rest is pretty default for InterSystems IRIS Community Edition in a docker container.
