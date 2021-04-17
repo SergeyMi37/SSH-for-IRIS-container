@@ -2,5 +2,5 @@ ROUTINE zSSH [Type=MAC]
 zSSH ; a placeholder for testing ZMP setup 
 	kill
 	write !,"This is a placeholder for testing"
-        ,!," if you see it the installation was OK",!
+        ,!," if you see it, then the installation was OK",!
 	quit	
