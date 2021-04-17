@@ -8,8 +8,8 @@ ARG IMAGE=intersystemsdc/iris-community:2020.4.0.524.0-zpm
 FROM $IMAGE
 
 USER root   
-RUN echo "root:iris-1205" | chpasswd \
- && echo "irisowner:iris-1205" | chpasswd \
+RUN echo "root:iris-2104" | chpasswd \
+ && echo "irisowner:iris-2104" | chpasswd \
  && adduser irisowner root \
  && adduser irisuser root 
 
