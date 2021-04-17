@@ -1,10 +1,14 @@
-### why SSH ?
+### Why SSH ?
 If you do not have direct access to the server that runs your IRIS Docker container   
 you still may require access to the container outside "iris session" or "WebTerminal".   
 With ans SSH terminal (PuTTY, KiTTY,.. ) you get access inside Docker and then, depening    
 on your needs you run "iris session iris" or display / manipulate files directly.
 
-This is based on template for InterSystems ObjectScript Github repository.  
+##### Note:
+This is not meant to be the default access for the average application user  
+but the emergency backdoor for System Managment, Support and Development. 
+
+This is based on templates for InterSystems ObjectScript Github repository.  
 There a few signifcant extensions:  
 - docker-compose.yaml exposes port 22 for SSH   
 - Dockerfile installs SSH server and prepares Server start. You may observe    
@@ -42,7 +46,7 @@ log in as **irisowner** + the PW yoou assigned and you are in your container.
 
 this is identic as with **docker-compose exec iris sh**  in a local docker instance
 
-### example:
+### Example:
 ```
 login as: irisowner
 irisowner@localhost's password:
