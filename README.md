@@ -8,7 +8,7 @@ on your needs you run "iris session iris" or display / manipulate files directly
 This is not meant to be the default access for the average application user  
 but the emergency backdoor for System Managment, Support and Development. 
 
-This is based on templates for InterSystems ObjectScript Github repository.  
+This project is based on templates for InterSystems ObjectScript Github repository.  
 There a few signifcant extensions:  
 - docker-compose.yaml exposes port 22 for SSH   
 - Dockerfile installs SSH server and prepares Server start. You may observe    
@@ -16,7 +16,7 @@ There a few signifcant extensions:
 - to login into your container user **irisrsowner** got a password visible to you   
   that is required for login over SSH. User root is not allowed for login.   
  
-The rest is prety default for InterSystems IRIS Community Edition in a docker container.
+The rest is pretty default for InterSystems IRIS Community Edition in a docker container.
 ### Prerequisites  
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 ### Installation   
@@ -40,11 +40,11 @@ e37392a1c7c3   ssh-for-iris-container   "/bin/sh -c '/iris-m…"   2 hours ago  
 2188/tcp, 54773/tcp,    
 0.0.0.0:41022->22/tcp, 0.0.0.0:41773->1972/tcp, 0.0.0.0:42773->52773/tcp, 0.0.0.0:49716->53773/tcp   
 ```
-and see the assigned_port for port 22 in container (here it'S 41022)
-next you connect with PuTTY to server:asigned_port   
-log in as **irisowner** + the PW yoou assigned and you are in your container.
+and see the assigned_port for port 22 in container (here it's 41022).  
+Next you connect with PuTTY over SSH to server:assigned_port   
+Log in as **irisowner** + the PW of your choice and you are in your container.   
 
-this is identic as with **docker-compose exec iris sh**  in a local docker instance
+This is similar as with **docker-compose exec iris sh**  in a local docker instance.   
 
 ### Example:
 ```
