@@ -80,7 +80,9 @@ zpm:%SYS>list
 ssh-for-iris-container 0.0.1
 webterminal 4.9.2
 zpm 0.2.14
-zpm:%SYS>q %SYS>d ^zSSH This is a placeholder for testing
+zpm:%SYS>q   
+%SYS>d ^zSSH   
+This is a placeholder for testing    
  if you see it, then the installation was OK   
 %SYS>h
 $
