@@ -1,18 +1,18 @@
 ### Why SSH ?
 If you do not have direct access to the server that runs your IRIS Docker container   
 you still may require access to the container outside "iris session" or "WebTerminal".   
-With ans SSH terminal (PuTTY, KiTTY,.. ) you get access inside Docker and then, depening    
-on your needs you run "iris session iris" or display / manipulate files directly.
+With ans SSH terminal (PuTTY, KiTTY,.. ) you get access inside Docker, and then, depending    
+on your needs you run "iris session iris" or display/manipulate files directly.
 
 ##### Note:
 This is not meant to be the default access for the average application user  
-but the emergency backdoor for System Managment, Support and Development. 
+but the emergency backdoor for System Management, Support and Development. 
 
 This project is based on templates for InterSystems ObjectScript Github repository.  
-There a few signifcant extensions:  
+There a few siginifcant extensions:  
 - docker-compose.yaml exposes port 22 for SSH   
 - Dockerfile installs SSH server and prepares Server start. You may observe    
-  a signifcant bunch up updates as the underlaying Ubunto is not very fresh    
+  a significant bunch up updates as the underlying Ubuntu is not very fresh    
 - to login into your container user **irisrsowner** got a password visible to you   
   that is required for login over SSH. User root is not allowed for login.   
  
@@ -41,7 +41,7 @@ e37392a1c7c3   ssh-for-iris-container   "/bin/sh -c '/iris-m…"   2 hours ago  
 0.0.0.0:41022->22/tcp, 0.0.0.0:41773->1972/tcp, 0.0.0.0:42773->52773/tcp, 0.0.0.0:49716->53773/tcp   
 ```
 and see the assigned_port for port 22 in container (here it's 41022).  
-Next you connect with PuTTY over SSH to server:assigned_port   
+Next, you connect with PuTTY over SSH to server:assigned_port   
 Log in as **irisowner** + the PW of your choice and you are in your container.   
 
 This is similar as with **docker-compose exec iris sh**  in a local docker instance.   
