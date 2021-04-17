@@ -8,7 +8,18 @@ ARG IMAGE=intersystemsdc/iris-community:2020.4.0.524.0-zpm
 FROM $IMAGE
 
 USER root   
-        
+RUN echo "root:iris-1205" | chpasswd \
+ && echo "irisowner:iris-1205" | chpasswd \
+ && adduser irisowner root \
+ && adduser irisuser root 
+
+RUN apt-get update \
+ && apt-get install ssh -y  \
+ && service ssh start  \
+ && service ssh status
+COPY sshstart.sh  /sshstart.sh
+ENTRYPOINT /iris-main -b /sshstart.sh
+
 WORKDIR /opt/irisbuild
 RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisbuild
 USER ${ISC_PACKAGE_MGRUSER}
@@ -20,4 +31,5 @@ COPY iris.script iris.script
 
 RUN iris start IRIS \
 	&& iris session IRIS < iris.script \
-    && iris stop IRIS quietly
+    && iris stop IRIS quietly 
+USER root
