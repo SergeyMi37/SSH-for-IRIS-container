@@ -13,7 +13,7 @@ production environments but exclusive for System Management, Support and Develop
 ~~~
 To react to some security concerns there is also a Dockerfile.soft that follows 
 default recommendations and requires addional actions after container start.    
-To activate SSH you have to run __docker exec -it -u root ssh /sshstart.sh__   
+To activate SSH you have to run "docker exec -it -u root ssh /sshstart.sh"      
 In addition you have to setup user passwords manually as found in Ubuntu docu. 
 ~~~
 This project is based on templates for InterSystems ObjectScript Github repository.  
