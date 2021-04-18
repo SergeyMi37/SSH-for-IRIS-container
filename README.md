@@ -13,7 +13,6 @@ production environments but exclusive for System Management, Support and Develop
 ~~~
 To react to some security concerns there is also a Dockerfile.soft that follows 
 default recommendations and requires additional actions after container start.
-You have to setup user passwords manually as found in Ubuntu docu. 
 ~~~
 This project is based on templates for InterSystems ObjectScript Github repository.  
 There a few siginifcant extensions:  
@@ -39,6 +38,11 @@ Run the IRIS container with
 ```
 $ docker-compose up -d
 ```
+For the 'soft' variant you have to start sshd and set a user-pw for login  
+~~~
+docker exec -it -u root iris-ssh /irisrun/repo/sshstart.sh  
+docker exec -it -u root iris-ssh /irisrun/repo/pw.sh  
+~~~
 ### How to Test it:
 If you didn't assign a fixed port to projected container port 22 you may run
 ```
