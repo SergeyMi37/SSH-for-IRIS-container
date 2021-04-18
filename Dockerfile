@@ -9,16 +9,13 @@ FROM $IMAGE
 
 USER root   
 RUN echo "root:iris-2104" | chpasswd \
- && echo "irisowner:iris-2104" | chpasswd \
- && adduser irisowner root \
- && adduser irisuser root 
+ && echo "irisowner:iris-2104" | chpasswd 
 
 RUN apt-get update \
  && apt-get install ssh -y  \
  && service ssh start  \
  && service ssh status
-COPY sshstart.sh  /sshstart.sh
-ENTRYPOINT /iris-main -b /sshstart.sh
+COPY sshstart.sh  /etc/init.d/sshstart.sh
 
 WORKDIR /opt/irisbuild
 RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisbuild
@@ -32,4 +29,3 @@ COPY iris.script iris.script
 RUN iris start IRIS \
 	&& iris session IRIS < iris.script \
     && iris stop IRIS quietly 
-USER root
