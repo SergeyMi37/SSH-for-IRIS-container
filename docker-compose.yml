@@ -12,5 +12,5 @@ services:
       - 53773
     volumes:
       - ./:/irisrun/repo
-    container_name: irisssh 
+    container_name: iris-ssh 
     
