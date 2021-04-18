@@ -4,10 +4,18 @@ you still may require access to the container outside "iris session" or "WebTerm
 With ans SSH terminal (PuTTY, KiTTY,.. ) you get access inside Docker, and then, depending    
 on your needs you run "iris session iris" or display/manipulate files directly.
 
-##### Note:
-This is not meant to be the default access for the average application user  
-but the emergency backdoor for System Management, Support and Development. 
-
+##### Note1:
+~~~
+This is not meant to be the default access for average application users in   
+production environments but exclusive for System Management, Support and Development. 
+~~~
+##### Note2:
+~~~
+To react to some security concerns there is also a Dockerfile.soft that follows 
+default recommendations and requires addional actions after container start.    
+To activate SSH you have to run __docker exec -it -u root ssh /sshstart.sh__   
+In addition you have to setup user passwords manually as found in Ubuntu docu. 
+~~~
 This project is based on templates for InterSystems ObjectScript Github repository.  
 There a few siginifcant extensions:  
 - docker-compose.yaml exposes port 22 for SSH   
