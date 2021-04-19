@@ -100,5 +100,5 @@ $
 ```
 
 [Article in DC](https://community.intersystems.com/post/ssh-iris-container)     
-[Demo Video added](https://www.dropbox.com/s/714spwps4e486a9/SSH-for-IRIS-container.mp4?dl=0)  
+[Demo Video added](https://www.youtube.com/watch?v=fC61EPdTDQQ)  
   
