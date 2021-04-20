@@ -10,10 +10,11 @@ FROM $IMAGE
 USER root   
 RUN apt-get update \
  && apt-get install ssh -y  \
- && service ssh start \
- && echo "irisowner:iris-2104" | chpasswd
+ && apt-get install sudo \
+ && service ssh start 
 
-COPY sshstart.sh  /sshstart.sh
+COPY sshstart.sh  /
+COPY sshacc.sh /
 ENTRYPOINT /iris-main -b /sshstart.sh
 
 WORKDIR /opt/irisbuild
@@ -25,6 +26,6 @@ COPY module.xml module.xml
 COPY iris.script iris.script
 
 RUN iris start IRIS \
-	&& iris session IRIS < iris.script \
+    && iris session IRIS < iris.script \
     && iris stop IRIS quietly 
-USER root
+USER root	
