@@ -4,25 +4,18 @@ you still may require access to the container outside "iris session" or "WebTerm
 With ans SSH terminal (PuTTY, KiTTY,.. ) you get access inside Docker, and then, depending    
 on your needs you run "iris session iris" or display/manipulate files directly.
 
-##### Note1:
+##### Note:
 ~~~
 This is not meant to be the default access for average application users in   
 production environments but exclusive for System Management, Support and Development. 
 ~~~
-##### Note2:
-~~~
-To react to some security concerns there is also a Dockerfile.soft that follows 
-default recommendations and requires additional actions after container start.
-~~~
+
 This project is based on templates for InterSystems ObjectScript Github repository.  
 There a few siginifcant extensions:  
 - docker-compose.yaml exposes port 22 for SSH   
 - Dockerfile installs SSH server and prepares Server start. You may observe    
-  a significant bunch up updates as the underlying Ubuntu is not very fresh    
-- to login into your container user **irisowner** got a password visible to you   
-  that is required for login over SSH. User root is not allowed for login.   
- 
-The rest is pretty default for InterSystems IRIS Community Edition in a docker container.
+  a significant bunch up updates as the underlying Ubuntu is not very fresh  
+
 ### Prerequisites  
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 ### Installation   
@@ -30,19 +23,16 @@ Clone/git pull the repo into any local directory
 ```
 $ git clone https://github.com/rcemper/SSH-for-IRIS-container.git   
 ```
-Open the terminal in this directory and run:
+Open the terminal in this directory and run:   
 ```
 $ docker-compose build
 ```
-Run the IRIS container with
+Run and Init the IRIS container with   
 ```
-$ docker-compose up -d
+$ docker-compose up -d 
+$ docker-compose exec -u root iris /sshstart.sh
 ```
-For the 'soft' variant you have to start sshd and set a user-pw for login  
-~~~
-docker exec -it -u root iris-ssh /irisrun/repo/sshstart.sh  
-docker exec -it -u root iris-ssh /irisrun/repo/pw.sh  
-~~~
+
 ### How to Test it:
 If you didn't assign a fixed port to projected container port 22 you may run
 ```
