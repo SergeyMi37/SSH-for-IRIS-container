@@ -30,7 +30,6 @@ $ docker-compose build
 Run and Init the IRIS container with   
 ```
 $ docker-compose up -d 
-$ docker-compose exec -u root iris /sshstart.sh
 ```
 
 ### How to Test it:
