@@ -3,7 +3,8 @@
   <Document name="ssh-for-iris-container.ZPM">
     <Module>
       <Name>ssh-for-iris-container</Name>
-      <Version>0.0.1</Version>
+      <Version>0.0.2</Version>
+      <Description>Example how you can add SSH server to a standard IRIS docker image</Description>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="zSSH.MAC"/>
