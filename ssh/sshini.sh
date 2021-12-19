@@ -1,6 +1,8 @@
 #!/bin/bash
-chmod 4755 /usr/sbin/sshd 
+apt-get update 
+apt-get install ssh -y   
 /sshacc.sh
 echo 'echo "done"' > /sshacc.sh
-mkdir /run/sshd 
+mkdir /run/sshd
 echo "ok"
+
