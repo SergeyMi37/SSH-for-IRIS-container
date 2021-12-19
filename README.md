@@ -31,8 +31,13 @@ Run and Init the IRIS container with
 ```
 $ docker-compose up -d 
 ```
-
-### How to Test it:
+Once IRIS container is up you need to start the SSH server:
+````
+docker-compose exec -u root iris /sshstart.sh
+ * Starting OpenBSD Secure Shell server sshd 
+ * sshd is running
+````
+ ### How to Test it:
 If you didn't assign a fixed port to projected container port 22 you may run
 ```
 $ docker ps
